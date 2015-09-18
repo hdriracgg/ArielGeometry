@@ -42,6 +42,9 @@ import org.openide.util.lookup.InstanceContent;
     "HINT_ArielGeometryEditorTopComponent=This is a ArielGeometryEditor window"
 })
 public final class ArielGeometryEditorTopComponent extends TopComponent {
+    
+    //TEST Hatem DRIRA
+    private int testHDR;
 
 //    private ArielSpecialSourceRegularGeometryModel agm;
     private GeometryModel agm;
