@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.cgg.arielgeometry.editor">
+  <ClassDiagramComponents>
+    <Class name="ArielGeometryEditorTopComponent" package="com.cgg.arielgeometry.editor" visibility="public" isFinal="true" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="agm" type="GeometryModel" visibility="private"/>
+        <Field name="content" type="InstanceContent" visibility="private"/>
+        <Field name="debug" type="boolean" visibility="package"/>
+        <Field name="DefaultButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="MovingButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="SpecialButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="StandardButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="bxs" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="bys" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="davecov" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="dbinsx" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="dbinsy" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="dboatspeed" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="dcovarea" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="dmaxcov" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="dnbnonemptybins" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="drecordingtime" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="dsnbs" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="dtotaltraces" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="dtracedensity" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel13" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel14" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel15" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel16" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel17" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel18" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel19" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel20" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel21" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel22" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel23" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel24" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel25" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel26" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jSeparator1" type="javax.swing.JSeparator" visibility="private"/>
+        <Field name="jTabbedPane1" type="javax.swing.JTabbedPane" visibility="private"/>
+        <Field name="loadfile" type="javax.swing.JButton" visibility="private"/>
+        <Field name="maxoffset" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="printtoggle" type="javax.swing.JCheckBox" visibility="private"/>
+        <Field name="rcls" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="rclslabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="rils" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="rilslabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="rlabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="rls" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="rnbnlabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="rpl" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="rs" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="rss" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="sboats" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="scls" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="sclslabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="sils" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="silslabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="slabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="smxolabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="speedx" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="speedy" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="spti" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="ssls" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="sspl" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="void" visibility="private"/>
+        <Method name="StandardButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="DefaultButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="MovingButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="SpecialButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="loadfileActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="rilsActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="sptiActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="bxsActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="dowork" returnType="void" visibility="private"/>
+        <Method name="storeGeometryValues" returnType="void" visibility="private"/>
+        <Method name="updatecalculatedvalues" returnType="void" visibility="private"/>
+        <Method name="resetDefaultGeometryValues" returnType="void" visibility="private"/>
+        <Method name="printGeometryValues" returnType="void" visibility="private"/>
+        <Method name="componentOpened" returnType="void" visibility="public"/>
+        <Method name="componentClosed" returnType="void" visibility="public"/>
+        <Method name="writeProperties" returnType="void" visibility="package">
+          <Argument type="java.util.Properties" name="p"/>
+        </Method>
+        <Method name="readProperties" returnType="void" visibility="package">
+          <Argument type="java.util.Properties" name="p"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

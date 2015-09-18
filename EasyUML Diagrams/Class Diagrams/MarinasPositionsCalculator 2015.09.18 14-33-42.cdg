@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="MarinasPositionsCalculator">
+  <ClassDiagramComponents>
+    <Class name="MarinasPositionsCalculator" package="MarinasPositionsCalculator" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="DISTANCE_BETWEEN_MARINAS" type="int" visibility="public" isStatic="true"/>
+        <Field name="STEP_DURATION" type="int" visibility="public" isStatic="true"/>
+        <Field name="NODE_PER_GROUP" type="int" visibility="public" isStatic="true"/>
+        <Field name="NODE_PER_LINE" type="int" visibility="public" isStatic="true"/>
+        <Field name="trajectoryPoints" type="List&lt;Point&gt;" visibility="private"/>
+        <Field name="trajectorySpeeds" type="List&lt;Float&gt;" visibility="private"/>
+        <Field name="marinasPoints" type="List&lt;Map&lt;Integer, Node&gt;&gt;" visibility="private"/>
+        <Field name="nbNodePerGroup" type="int" visibility="private"/>
+        <Field name="nbNodeperLine" type="int" visibility="private"/>
+        <Field name="stepDuration" type="int" visibility="private"/>
+        <Field name="marinasDistance" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="List&lt;Point&gt;" name="trajectoryPoints"/>
+          <Argument type="List&lt;Float&gt;" name="trajectorySpeeds"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="List&lt;Point&gt;" name="trajectoryPoints"/>
+          <Argument type="List&lt;Float&gt;" name="trajectorySpeeds"/>
+          <Argument type="int" name="nbNodePerGroup"/>
+          <Argument type="int" name="nbNodeperLine"/>
+          <Argument type="int" name="stepDuration"/>
+          <Argument type="int" name="marinasDistance"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNbMarinas" returnType="int" visibility="public"/>
+        <Method name="initFirstPoints" returnType="Map&lt;Integer, Node&gt;" visibility="public">
+          <Argument type="Point" name="refPoint"/>
+          <Argument type="Double" name="firstTime"/>
+        </Method>
+        <Method name="calculate" returnType="void" visibility="public"/>
+        <Method name="getTrajectoryPoints" returnType="List&lt;Point&gt;" visibility="public"/>
+        <Method name="getMarinasPoints" returnType="List&lt;Map&lt;Integer, Node&gt;&gt;" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Node" package="MarinasPositionsCalculator" visibility="public" xPosition="249.0" yPosition="708.0">
+      <Fields>
+        <Field name="coodinates" type="Point" visibility="private"/>
+        <Field name="time" type="long" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Point" name="coodinates"/>
+          <Argument type="long" name="time"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCoodinates" returnType="Point" visibility="public"/>
+        <Method name="getTime" returnType="long" visibility="public"/>
+        <Method name="setCoodinates" returnType="void" visibility="public">
+          <Argument type="Point" name="coodinates"/>
+        </Method>
+        <Method name="setTime" returnType="void" visibility="public">
+          <Argument type="long" name="time"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrajectoryNode" package="MarinasPositionsCalculator" visibility="public" xPosition="752.0" yPosition="624.0">
+      <Fields>
+        <Field name="x" type="float" visibility="private"/>
+        <Field name="y" type="float" visibility="private"/>
+        <Field name="speed" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="marinasPoints" source="MarinasPositionsCalculator.MarinasPositionsCalculator" target="MarinasPositionsCalculator.Node" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Map&lt;Integer, Node&gt;&gt;"/>
+    <UseRelation source="MarinasPositionsCalculator.MarinasPositionsCalculator" target="MarinasPositionsCalculator.Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

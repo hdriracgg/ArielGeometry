@@ -1,0 +1,350 @@
+@startuml
+annotation TopComponent.Description
+annotation TopComponent.OpenActionRegistration
+annotation TopComponent.Registration
+annotation java.lang.Override
+annotation java.lang.SuppressWarnings
+annotation org.netbeans.api.settings.ConvertAsProperties
+annotation org.openide.awt.ActionID
+annotation org.openide.awt.ActionReference
+annotation org.openide.util.NbBundle.Messages
+class arieleditingpanel.ArielEditingPanel
+class arieleditingpanel.CalibrateForm
+class arieleditingpanel.MarinasPositionsCalculator
+class arieleditingpanel.Node
+class arieleditingpanel.TrajectoryNode
+class arieleditingpanel.WayPointEditingPanel
+class com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent
+class com.cgg.arielgeometry.model.AbstractGeometryModel
+class com.cgg.arielgeometry.model.GeometryModel
+class com.cgg.arielgeometry.model.Shot
+class com.cgg.arielgeometry.model.io.ScannerMOOS
+class com.cgg.arielgeometry.model.io.UKOOAwriter
+class com.cgg.arielgeometry.model.types.EndCoordinateList
+class com.cgg.arielgeometry.model.types.XYLocation
+class com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent
+class com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot
+class com.cgg.arielgeometryjfcviewer.EditingPanel
+class com.cgg.arielgeometryjfcviewer.InterpolatedPaintScale
+class com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot
+class com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent
+class com.cgg.arielgeometryroseviewer.BinMetric
+class com.cgg.arielgeometryroseviewer.CircularGrid
+class com.cgg.arielgeometryroseviewer.CircularGridDemo
+class com.cgg.arielgeometryroseviewer.CircularGridDisplay
+class com.cgg.arielgeometryroseviewer.InterpolatedPaintScale
+class java.awt.BorderLayout
+class java.awt.Color
+class java.awt.Dimension
+class java.awt.Font
+class java.awt.Graphics
+class java.awt.Graphics2D
+class java.awt.GridLayout
+class java.awt.Paint
+class java.awt.Point
+class java.awt.Rectangle
+class java.awt.event.ActionEvent
+class java.awt.event.ActionListener
+class java.awt.event.MouseEvent
+class java.awt.event.MouseWheelEvent
+class java.awt.event.WindowAdapter
+class java.awt.event.WindowEvent
+class java.awt.event.WindowListener
+class java.awt.geom.AffineTransform
+class java.awt.geom.Line2D
+class java.awt.geom.Rectangle2D
+class java.awt.image.BufferedImage
+class java.io.File
+class java.io.FileNotFoundException
+class java.io.IOException
+class java.io.PrintStream
+class java.nio.file.Files
+class java.util.ArrayList
+class java.util.Collection
+class java.util.HashMap
+class java.util.List
+class java.util.Map
+class java.util.logging.Level
+class java.util.logging.Logger
+class javax.imageio.ImageIO
+class javax.swing.JButton
+class javax.swing.JComponent
+class javax.swing.JDialog
+class javax.swing.JFileChooser
+class javax.swing.JFrame
+class javax.swing.JLabel
+class javax.swing.JPanel
+class javax.swing.JScrollPane
+class javax.swing.JTextField
+class javax.swing.RepaintManager
+class javax.swing.filechooser.FileNameExtensionFilter
+class org.jfree.chart.ChartFactory
+class org.jfree.chart.ChartMouseEvent
+class org.jfree.chart.ChartMouseListener
+class org.jfree.chart.ChartPanel
+class org.jfree.chart.JFreeChart
+class org.jfree.chart.annotations.XYDataImageAnnotation
+class org.jfree.chart.axis.AxisLocation
+class org.jfree.chart.axis.NumberAxis
+class org.jfree.chart.axis.ValueAxis
+class org.jfree.chart.block.BlockBorder
+class org.jfree.chart.entity.ChartEntity
+class org.jfree.chart.entity.XYItemEntity
+class org.jfree.chart.plot.Plot
+class org.jfree.chart.plot.PlotOrientation
+class org.jfree.chart.plot.XYPlot
+class org.jfree.chart.renderer.xy.XYBlockRenderer
+class org.jfree.chart.title.PaintScaleLegend
+class org.jfree.data.xy.DefaultXYZDataset
+class org.jfree.data.xy.XYDataset
+class org.jfree.data.xy.XYZDataset
+class org.jfree.ui.Layer
+class org.jfree.ui.RectangleEdge
+class org.jfree.ui.RectangleInsets
+class org.openide.util.LookupEvent
+class org.openide.util.lookup.AbstractLookup
+class org.openide.util.lookup.InstanceContent
+class org.openide.windows.TopComponent
+interface java.awt.event.MouseListener
+interface java.awt.event.MouseMotionListener
+interface java.awt.event.MouseWheelListener
+interface org.jfree.chart.renderer.PaintScale
+interface org.openide.util.LookupListener
+arieleditingpanel.ArielEditingPanel ..> java.lang.Override
+arieleditingpanel.ArielEditingPanel ..> java.awt.event.WindowAdapter
+arieleditingpanel.ArielEditingPanel ..> java.awt.event.WindowEvent
+arieleditingpanel.ArielEditingPanel ..> java.awt.event.WindowListener
+arieleditingpanel.ArielEditingPanel --|> javax.swing.JFrame
+arieleditingpanel.CalibrateForm ..> java.lang.SuppressWarnings
+arieleditingpanel.CalibrateForm ..> javax.swing.JDialog
+arieleditingpanel.CalibrateForm ..> javax.swing.JFrame
+arieleditingpanel.CalibrateForm --|> javax.swing.JPanel
+arieleditingpanel.MarinasPositionsCalculator ..> java.awt.Point
+arieleditingpanel.MarinasPositionsCalculator ..> java.util.ArrayList
+arieleditingpanel.MarinasPositionsCalculator ..> java.util.HashMap
+arieleditingpanel.MarinasPositionsCalculator ..> java.util.List
+arieleditingpanel.MarinasPositionsCalculator ..> java.util.Map
+arieleditingpanel.Node ..> java.awt.Point
+arieleditingpanel.WayPointEditingPanel ..> java.lang.Override
+arieleditingpanel.WayPointEditingPanel ..> java.awt.Color
+arieleditingpanel.WayPointEditingPanel ..> java.awt.Dimension
+arieleditingpanel.WayPointEditingPanel ..> java.awt.Graphics
+arieleditingpanel.WayPointEditingPanel ..> java.awt.Graphics2D
+arieleditingpanel.WayPointEditingPanel ..> java.awt.Point
+arieleditingpanel.WayPointEditingPanel ..> java.awt.Rectangle
+arieleditingpanel.WayPointEditingPanel ..> java.awt.event.ActionEvent
+arieleditingpanel.WayPointEditingPanel ..> java.awt.event.ActionListener
+arieleditingpanel.WayPointEditingPanel ..> java.awt.event.MouseEvent
+arieleditingpanel.WayPointEditingPanel ..> java.awt.event.MouseWheelEvent
+arieleditingpanel.WayPointEditingPanel ..> java.awt.geom.AffineTransform
+arieleditingpanel.WayPointEditingPanel ..> java.awt.image.BufferedImage
+arieleditingpanel.WayPointEditingPanel ..> java.io.File
+arieleditingpanel.WayPointEditingPanel ..> java.io.FileNotFoundException
+arieleditingpanel.WayPointEditingPanel ..> java.io.IOException
+arieleditingpanel.WayPointEditingPanel ..> java.io.PrintStream
+arieleditingpanel.WayPointEditingPanel ..> java.nio.file.Files
+arieleditingpanel.WayPointEditingPanel ..> java.util.ArrayList
+arieleditingpanel.WayPointEditingPanel ..> java.util.List
+arieleditingpanel.WayPointEditingPanel ..> java.util.Map
+arieleditingpanel.WayPointEditingPanel ..> java.util.logging.Level
+arieleditingpanel.WayPointEditingPanel ..> java.util.logging.Logger
+arieleditingpanel.WayPointEditingPanel ..> javax.imageio.ImageIO
+arieleditingpanel.WayPointEditingPanel ..> javax.swing.JButton
+arieleditingpanel.WayPointEditingPanel ..> javax.swing.JDialog
+arieleditingpanel.WayPointEditingPanel ..> javax.swing.JFileChooser
+arieleditingpanel.WayPointEditingPanel ..> javax.swing.JLabel
+arieleditingpanel.WayPointEditingPanel --|> javax.swing.JPanel
+arieleditingpanel.WayPointEditingPanel ..> javax.swing.JTextField
+arieleditingpanel.WayPointEditingPanel ..> javax.swing.filechooser.FileNameExtensionFilter
+arieleditingpanel.WayPointEditingPanel --|> java.awt.event.MouseListener
+arieleditingpanel.WayPointEditingPanel --|> java.awt.event.MouseMotionListener
+arieleditingpanel.WayPointEditingPanel --|> java.awt.event.MouseWheelListener
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> TopComponent.Description
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> TopComponent.OpenActionRegistration
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> TopComponent.Registration
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> java.lang.Override
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> org.netbeans.api.settings.ConvertAsProperties
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> org.openide.awt.ActionID
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> org.openide.awt.ActionReference
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> org.openide.util.NbBundle.Messages
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> com.cgg.arielgeometry.model.GeometryModel
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> com.cgg.arielgeometry.model.Shot
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> com.cgg.arielgeometry.model.io.ScannerMOOS
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> com.cgg.arielgeometry.model.io.UKOOAwriter
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> java.awt.event.WindowAdapter
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> java.awt.event.WindowEvent
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> java.awt.event.WindowListener
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> javax.swing.JFrame
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> org.openide.util.lookup.AbstractLookup
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent ..> org.openide.util.lookup.InstanceContent
+com.cgg.arielgeometry.editor.ArielGeometryEditorTopComponent --|> org.openide.windows.TopComponent
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> TopComponent.Description
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> TopComponent.OpenActionRegistration
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> TopComponent.Registration
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> java.lang.Override
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> org.netbeans.api.settings.ConvertAsProperties
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> org.openide.awt.ActionID
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> org.openide.awt.ActionReference
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> org.openide.util.NbBundle.Messages
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> com.cgg.arielgeometry.model.AbstractGeometryModel
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> java.awt.BorderLayout
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> java.util.Collection
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> javax.swing.JScrollPane
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> javax.swing.RepaintManager
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> org.openide.util.LookupEvent
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> org.openide.util.lookup.AbstractLookup
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent ..> org.openide.util.lookup.InstanceContent
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent --|> org.openide.windows.TopComponent
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent --|> org.openide.util.LookupListener
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.lang.Override
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> com.cgg.arielgeometry.model.AbstractGeometryModel
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> com.cgg.arielgeometry.model.types.EndCoordinateList
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> com.cgg.arielgeometry.model.types.XYLocation
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.awt.Color
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.awt.Dimension
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.awt.Font
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.awt.Graphics
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.awt.Graphics2D
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.awt.GridLayout
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.awt.geom.Line2D
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.awt.image.BufferedImage
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.io.File
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.io.IOException
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> java.util.List
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> javax.imageio.ImageIO
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot --|> javax.swing.JPanel
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.ChartFactory
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.ChartMouseEvent
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.ChartMouseListener
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.ChartPanel
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.JFreeChart
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.annotations.XYDataImageAnnotation
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.axis.AxisLocation
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.axis.NumberAxis
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.axis.ValueAxis
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.block.BlockBorder
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.entity.ChartEntity
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.entity.XYItemEntity
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.plot.Plot
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.plot.PlotOrientation
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.plot.XYPlot
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.renderer.xy.XYBlockRenderer
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.title.PaintScaleLegend
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.data.xy.DefaultXYZDataset
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.data.xy.XYDataset
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.data.xy.XYZDataset
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.ui.Layer
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.ui.RectangleEdge
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.ui.RectangleInsets
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.openide.util.lookup.InstanceContent
+com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot ..> org.jfree.chart.renderer.PaintScale
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.lang.Override
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.Color
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.Dimension
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.Graphics
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.Graphics2D
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.Point
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.Rectangle
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.event.ActionEvent
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.event.ActionListener
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.event.MouseEvent
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.event.MouseWheelEvent
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.geom.AffineTransform
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.awt.image.BufferedImage
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.io.File
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.io.IOException
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.util.ArrayList
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> java.util.List
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> javax.imageio.ImageIO
+com.cgg.arielgeometryjfcviewer.EditingPanel ..> javax.swing.JButton
+com.cgg.arielgeometryjfcviewer.EditingPanel --|> javax.swing.JPanel
+com.cgg.arielgeometryjfcviewer.EditingPanel --|> java.awt.event.MouseListener
+com.cgg.arielgeometryjfcviewer.EditingPanel --|> java.awt.event.MouseMotionListener
+com.cgg.arielgeometryjfcviewer.EditingPanel --|> java.awt.event.MouseWheelListener
+com.cgg.arielgeometryjfcviewer.InterpolatedPaintScale ..> java.lang.Override
+com.cgg.arielgeometryjfcviewer.InterpolatedPaintScale ..> java.awt.Color
+com.cgg.arielgeometryjfcviewer.InterpolatedPaintScale ..> java.awt.Paint
+com.cgg.arielgeometryjfcviewer.InterpolatedPaintScale --|> org.jfree.chart.renderer.PaintScale
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> com.cgg.arielgeometry.model.AbstractGeometryModel
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> com.cgg.arielgeometry.model.types.EndCoordinateList
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> com.cgg.arielgeometry.model.types.XYLocation
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> java.awt.Color
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> java.awt.Dimension
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> java.awt.Font
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> java.util.List
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot --|> javax.swing.JPanel
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> javax.swing.JScrollPane
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.ChartFactory
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.ChartPanel
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.JFreeChart
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.axis.AxisLocation
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.axis.NumberAxis
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.axis.ValueAxis
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.block.BlockBorder
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.plot.PlotOrientation
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.plot.XYPlot
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.renderer.xy.XYBlockRenderer
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.title.PaintScaleLegend
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.data.xy.DefaultXYZDataset
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.data.xy.XYDataset
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.ui.RectangleEdge
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.ui.RectangleInsets
+com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot ..> org.jfree.chart.renderer.PaintScale
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> TopComponent.Description
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> TopComponent.OpenActionRegistration
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> TopComponent.Registration
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> java.lang.Override
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> org.netbeans.api.settings.ConvertAsProperties
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> org.openide.awt.ActionID
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> org.openide.awt.ActionReference
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> org.openide.util.NbBundle.Messages
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> com.cgg.arielgeometry.model.types.EndCoordinateList
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> com.cgg.arielgeometry.model.types.XYLocation
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> java.awt.BorderLayout
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> java.awt.GridLayout
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> java.util.Collection
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> java.util.List
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> javax.swing.JScrollPane
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> javax.swing.RepaintManager
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> org.openide.util.LookupEvent
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> org.openide.util.lookup.AbstractLookup
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent ..> org.openide.util.lookup.InstanceContent
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent --|> org.openide.windows.TopComponent
+com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent --|> org.openide.util.LookupListener
+com.cgg.arielgeometryroseviewer.BinMetric ..> java.awt.Color
+com.cgg.arielgeometryroseviewer.BinMetric ..> java.awt.image.BufferedImage
+com.cgg.arielgeometryroseviewer.BinMetric ..> java.io.File
+com.cgg.arielgeometryroseviewer.BinMetric ..> java.io.IOException
+com.cgg.arielgeometryroseviewer.BinMetric ..> javax.imageio.ImageIO
+com.cgg.arielgeometryroseviewer.CircularGridDemo ..> java.lang.Override
+com.cgg.arielgeometryroseviewer.CircularGridDemo ..> java.awt.Color
+com.cgg.arielgeometryroseviewer.CircularGridDemo ..> java.awt.Dimension
+com.cgg.arielgeometryroseviewer.CircularGridDemo ..> java.awt.Graphics
+com.cgg.arielgeometryroseviewer.CircularGridDemo ..> java.awt.Graphics2D
+com.cgg.arielgeometryroseviewer.CircularGridDemo ..> java.awt.image.BufferedImage
+com.cgg.arielgeometryroseviewer.CircularGridDemo --|> javax.swing.JComponent
+com.cgg.arielgeometryroseviewer.CircularGridDemo ..> javax.swing.JFrame
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> java.lang.Override
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> com.cgg.arielgeometry.model.types.EndCoordinateList
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> com.cgg.arielgeometry.model.types.XYLocation
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> java.awt.Color
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> java.awt.Dimension
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> java.awt.Font
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> java.awt.Graphics
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> java.awt.Graphics2D
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> java.awt.geom.Rectangle2D
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> java.awt.image.BufferedImage
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> java.util.List
+com.cgg.arielgeometryroseviewer.CircularGridDisplay --|> javax.swing.JComponent
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> javax.swing.JFrame
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> org.jfree.chart.axis.NumberAxis
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> org.jfree.chart.block.BlockBorder
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> org.jfree.chart.title.PaintScaleLegend
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> org.jfree.ui.RectangleEdge
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> org.jfree.ui.RectangleInsets
+com.cgg.arielgeometryroseviewer.CircularGridDisplay ..> org.jfree.chart.renderer.PaintScale
+com.cgg.arielgeometryroseviewer.InterpolatedPaintScale ..> java.lang.Override
+com.cgg.arielgeometryroseviewer.InterpolatedPaintScale ..> java.awt.Color
+com.cgg.arielgeometryroseviewer.InterpolatedPaintScale ..> java.awt.Paint
+com.cgg.arielgeometryroseviewer.InterpolatedPaintScale --|> org.jfree.chart.renderer.PaintScale
+@enduml

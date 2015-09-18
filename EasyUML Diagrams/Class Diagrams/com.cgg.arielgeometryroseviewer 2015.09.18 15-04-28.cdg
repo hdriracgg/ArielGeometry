@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.cgg.arielgeometryroseviewer">
+  <ClassDiagramComponents>
+    <Class name="ArielGeometryBinXYPlot" package="com.cgg.arielgeometryroseviewer" visibility="public" xPosition="117.0" yPosition="20.0">
+      <Fields>
+        <Field name="chartPanels" type="ChartPanel[]" visibility="package"/>
+        <Field name="agm" type="AbstractGeometryModel" visibility="package"/>
+        <Field name="endCoordinateList" type="EndCoordinateList" visibility="package"/>
+        <Field name="xmax" type="double" visibility="package"/>
+        <Field name="ymax" type="double" visibility="package"/>
+        <Field name="xmin" type="double" visibility="package"/>
+        <Field name="ymin" type="double" visibility="package"/>
+        <Field name="maxoffset" type="float" visibility="package"/>
+        <Field name="debug" type="boolean" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="title"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="drawmap" returnType="void" visibility="public">
+          <Argument type="EndCoordinateList" name="endCoordinateList"/>
+        </Method>
+        <Method name="plotendpoints" returnType="void" visibility="package"/>
+        <Method name="plotoffsets" returnType="void" visibility="package"/>
+        <Method name="plotxyoffsets" returnType="void" visibility="package"/>
+        <Method name="getoffsetcolour" returnType="double" visibility="private">
+          <Argument type="double" name="x"/>
+          <Argument type="double" name="y"/>
+        </Method>
+        <Method name="displayPlot" returnType="ChartPanel" visibility="public">
+          <Argument type="double" name="data"/>
+          <Argument type="String" name="pname"/>
+          <Argument type="String" name="sname"/>
+          <Argument type="float" name="max"/>
+          <Argument type="boolean" name="showscale"/>
+          <Argument type="int" name="i"/>
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="y"/>
+        </Method>
+        <Method name="createChart" returnType="JFreeChart" visibility="private">
+          <Argument type="XYDataset" name="dataset"/>
+          <Argument type="String" name="pname"/>
+          <Argument type="float" name="max"/>
+          <Argument type="boolean" name="showscale"/>
+          <Argument type="float" name="xblksize"/>
+          <Argument type="float" name="yblksize"/>
+        </Method>
+        <Method name="createXYZDataset" returnType="DefaultXYZDataset" visibility="private">
+          <Argument type="double" name="data"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ArielGeometryRoseViewerTopComponent" package="com.cgg.arielgeometryroseviewer" visibility="public" isFinal="true" xPosition="276.0" yPosition="869.0">
+      <Fields>
+        <Field name="content" type="InstanceContent" visibility="private"/>
+        <Field name="result" type="org.openide.util.Lookup.Result&lt;EndCoordinateList&gt;" visibility="private"/>
+        <Field name="chartpanel" type="ArielGeometryBinXYPlot" visibility="private"/>
+        <Field name="circularGridDisplay" type="CircularGridDisplay" visibility="private"/>
+        <Field name="debug" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="void" visibility="private"/>
+        <Method name="componentOpened" returnType="void" visibility="public"/>
+        <Method name="componentClosed" returnType="void" visibility="public"/>
+        <Method name="componentShowing" returnType="void" visibility="protected"/>
+        <Method name="componentHidden" returnType="void" visibility="protected"/>
+        <Method name="componentActivated" returnType="void" visibility="protected"/>
+        <Method name="componentDeactivated" returnType="void" visibility="protected"/>
+        <Method name="writeProperties" returnType="void" visibility="package">
+          <Argument type="java.util.Properties" name="p"/>
+        </Method>
+        <Method name="readProperties" returnType="void" visibility="package">
+          <Argument type="java.util.Properties" name="p"/>
+        </Method>
+        <Method name="resultChanged" returnType="void" visibility="public">
+          <Argument type="LookupEvent" name="le"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BinMetric" package="com.cgg.arielgeometryroseviewer" visibility="public" xPosition="1302.0" yPosition="848.0">
+      <Fields>
+        <Field name="debug" type="boolean" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="getbinmetric_img" returnType="float" visibility="public" isStatic="true">
+          <Argument type="String" name="img_name"/>
+          <Argument type="boolean" name="display_demo"/>
+        </Method>
+        <Method name="getbinmetric" returnType="float" visibility="public" isStatic="true">
+          <Argument type="float[][]" name="coords"/>
+          <Argument type="float" name="maxoffset"/>
+          <Argument type="boolean" name="display_demo"/>
+        </Method>
+        <Method name="distance" returnType="float" visibility="public" isStatic="true">
+          <Argument type="float[][]" name="coords"/>
+          <Argument type="float" name="maxoffset"/>
+          <Argument type="boolean" name="display_demo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CircularGrid" package="com.cgg.arielgeometryroseviewer" visibility="public" isFinal="true" xPosition="917.0" yPosition="20.0">
+      <Fields>
+        <Field name="total_layers" type="int" visibility="private"/>
+        <Field name="total_cells" type="int" visibility="private"/>
+        <Field name="total_points" type="int" visibility="private"/>
+        <Field name="grid_radius" type="double" visibility="private"/>
+        <Field name="nbpoints" type="int" visibility="private"/>
+        <Field name="cells" type="int[]" visibility="private"/>
+        <Field name="debug" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="total_points"/>
+          <Argument type="float" name="gr"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="float" name="gr"/>
+          <Argument type="float[][]" name="coords"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="float" name="gr"/>
+          <Argument type="float[][]" name="coords"/>
+          <Argument type="int" name="nbpoints"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calculateLayers" returnType="int" visibility="private">
+          <Argument type="int" name="nbp"/>
+        </Method>
+        <Method name="calculateTotalCells" returnType="int" visibility="private">
+          <Argument type="int" name="layers"/>
+        </Method>
+        <Method name="calculatehitspercell" returnType="void" visibility="private">
+          <Argument type="float[][]" name="coords"/>
+        </Method>
+        <Method name="createcells" returnType="int[]" visibility="private">
+          <Argument type="int" name="nbc"/>
+        </Method>
+        <Method name="getMaxCellWeight" returnType="double" visibility="public"/>
+        <Method name="getCellWeight" returnType="int" visibility="public">
+          <Argument type="int" name="id_cell"/>
+        </Method>
+        <Method name="getCellWeight" returnType="int" visibility="public">
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="y"/>
+        </Method>
+        <Method name="findCell" returnType="int" visibility="public">
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="y"/>
+        </Method>
+        <Method name="modulo2PI" returnType="double" visibility="public">
+          <Argument type="double" name="angle"/>
+        </Method>
+        <Method name="setTotalPoints" returnType="void" visibility="public" isFinal="true">
+          <Argument type="int" name="tp"/>
+        </Method>
+        <Method name="setNbLayers" returnType="void" visibility="private">
+          <Argument type="int" name="nbl"/>
+        </Method>
+        <Method name="setTotalCells" returnType="void" visibility="private">
+          <Argument type="int" name="tc"/>
+        </Method>
+        <Method name="setNbPoints" returnType="void" visibility="public" isFinal="true">
+          <Argument type="int" name="nbp"/>
+        </Method>
+        <Method name="setGridRadius" returnType="void" visibility="private">
+          <Argument type="float" name="gr"/>
+        </Method>
+        <Method name="getTotalCells" returnType="int" visibility="public" isFinal="true"/>
+        <Method name="getNbLayers" returnType="int" visibility="public" isFinal="true"/>
+        <Method name="getTotalPoints" returnType="int" visibility="public" isFinal="true"/>
+        <Method name="getRadius" returnType="double" visibility="public"/>
+        <Method name="getDiameter" returnType="int" visibility="public"/>
+        <Method name="getNbPoints" returnType="int" visibility="public"/>
+        <Method name="printInfo" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="CircularGridDemo" package="com.cgg.arielgeometryroseviewer" visibility="public" xPosition="1358.0" yPosition="239.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="grid" type="CircularGrid" visibility="private"/>
+        <Field name="canvas" type="BufferedImage" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="CircularGrid" name="grid"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="paintComponent" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="fillCanvas" returnType="void" visibility="public" isFinal="true"/>
+        <Method name="displayInFrame" returnType="void" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CircularGridDisplay" package="com.cgg.arielgeometryroseviewer" visibility="public" xPosition="904.0" yPosition="869.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="grid" type="CircularGrid" visibility="private"/>
+        <Field name="canvas" type="BufferedImage" visibility="private"/>
+        <Field name="debug" type="boolean" visibility="private"/>
+        <Field name="canvaswidth" type="int" visibility="private"/>
+        <Field name="canvasheight" type="int" visibility="private"/>
+        <Field name="xscale" type="float" visibility="private"/>
+        <Field name="yscale" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="CircularGrid" name="grid"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="paintComponent" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="fillCanvas" returnType="void" visibility="public" isFinal="true"/>
+        <Method name="scalex" returnType="int" visibility="private">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="scaley" returnType="int" visibility="private">
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="drawplot" returnType="void" visibility="public" isFinal="true">
+          <Argument type="EndCoordinateList" name="endCoordinateList"/>
+        </Method>
+        <Method name="displayInFrame" returnType="void" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InterpolatedPaintScale" package="com.cgg.arielgeometryroseviewer" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="max" type="float" visibility="private"/>
+        <Field name="lower" type="float" visibility="private"/>
+        <Field name="upper" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="float" name="max"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="float" name="max"/>
+          <Argument type="float" name="lower"/>
+          <Argument type="float" name="upper"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getLowerBound" returnType="double" visibility="public"/>
+        <Method name="getUpperBound" returnType="double" visibility="public"/>
+        <Method name="getPaint" returnType="Paint" visibility="public">
+          <Argument type="double" name="d"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="grid" source="com.cgg.arielgeometryroseviewer.CircularGridDemo" target="com.cgg.arielgeometryroseviewer.CircularGrid" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="chartpanel" source="com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent" target="com.cgg.arielgeometryroseviewer.ArielGeometryBinXYPlot" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="grid" source="com.cgg.arielgeometryroseviewer.CircularGridDisplay" target="com.cgg.arielgeometryroseviewer.CircularGrid" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="circularGridDisplay" source="com.cgg.arielgeometryroseviewer.ArielGeometryRoseViewerTopComponent" target="com.cgg.arielgeometryroseviewer.CircularGridDisplay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

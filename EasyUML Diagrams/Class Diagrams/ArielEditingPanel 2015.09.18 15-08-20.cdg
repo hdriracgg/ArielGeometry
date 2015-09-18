@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ArielEditingPanel">
+  <ClassDiagramComponents>
+    <Class name="ArielEditingPanel" package="arieleditingpanel" visibility="public" xPosition="248.0" yPosition="90.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CalibrateForm" package="arieleditingpanel" visibility="public" xPosition="668.0" yPosition="1307.0">
+      <Fields>
+        <Field name="caltlx" type="int" visibility="private"/>
+        <Field name="caltly" type="int" visibility="private"/>
+        <Field name="calbrx" type="int" visibility="private"/>
+        <Field name="calbry" type="int" visibility="private"/>
+        <Field name="wpep" type="WayPointEditingPanel" visibility="private"/>
+        <Field name="brx" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="bry" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="ok" type="javax.swing.JButton" visibility="private"/>
+        <Field name="tlx" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="tly" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="topleft" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="WayPointEditingPanel" name="wpep"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="okActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="bryActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MarinasPositionsCalculator" package="arieleditingpanel" visibility="public" xPosition="308.0" yPosition="547.0">
+      <Fields>
+        <Field name="DISTANCE_BETWEEN_MARINAS" type="int" visibility="public" isStatic="true"/>
+        <Field name="STEP_DURATION" type="int" visibility="public" isStatic="true"/>
+        <Field name="NODE_PER_GROUP" type="int" visibility="public" isStatic="true"/>
+        <Field name="NODE_PER_LINE" type="int" visibility="public" isStatic="true"/>
+        <Field name="trajectoryPoints" type="List&lt;Point&gt;" visibility="private"/>
+        <Field name="trajectorySpeeds" type="List&lt;Float&gt;" visibility="private"/>
+        <Field name="marinasPoints" type="List&lt;Map&lt;Integer, Node&gt;&gt;" visibility="private"/>
+        <Field name="firstPoints" type="Map&lt;Integer, Node&gt;" visibility="package"/>
+        <Field name="nbNodePerGroup" type="int" visibility="private"/>
+        <Field name="nbNodeperLine" type="int" visibility="private"/>
+        <Field name="stepDuration" type="int" visibility="private"/>
+        <Field name="marinasDistance" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="List&lt;Point&gt;" name="trajectoryPoints"/>
+          <Argument type="List&lt;Float&gt;" name="trajectorySpeeds"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="List&lt;Point&gt;" name="trajectoryPoints"/>
+          <Argument type="List&lt;Float&gt;" name="trajectorySpeeds"/>
+          <Argument type="int" name="nbNodePerGroup"/>
+          <Argument type="int" name="nbNodeperLine"/>
+          <Argument type="int" name="stepDuration"/>
+          <Argument type="int" name="marinasDistance"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNbMarinas" returnType="int" visibility="public"/>
+        <Method name="initMarinasPoints" returnType="void" visibility="public"/>
+        <Method name="initFirstPoints" returnType="void" visibility="public">
+          <Argument type="Point" name="refPoint"/>
+        </Method>
+        <Method name="calculate" returnType="void" visibility="public"/>
+        <Method name="getTrajectoryPoints" returnType="List&lt;Point&gt;" visibility="public"/>
+        <Method name="getMarinasPoints" returnType="List&lt;Map&lt;Integer, Node&gt;&gt;" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Node" package="arieleditingpanel" visibility="public" xPosition="799.0" yPosition="42.0">
+      <Fields>
+        <Field name="coodinates" type="Point" visibility="private"/>
+        <Field name="time" type="long" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Point" name="coodinates"/>
+          <Argument type="long" name="time"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCoodinates" returnType="Point" visibility="public"/>
+        <Method name="getTime" returnType="long" visibility="public"/>
+        <Method name="setCoodinates" returnType="void" visibility="public">
+          <Argument type="Point" name="coodinates"/>
+        </Method>
+        <Method name="setTime" returnType="void" visibility="public">
+          <Argument type="long" name="time"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TrajectoryNode" package="arieleditingpanel" visibility="public" xPosition="161.0" yPosition="331.0">
+      <Fields>
+        <Field name="x" type="float" visibility="private"/>
+        <Field name="y" type="float" visibility="private"/>
+        <Field name="speed" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="WayPointEditingPanel" package="arieleditingpanel" visibility="public" xPosition="1429.0" yPosition="67.0">
+      <Fields>
+        <Field name="background" type="BufferedImage" visibility="package"/>
+        <Field name="firstTime" type="boolean" visibility="package"/>
+        <Field name="debug" type="boolean" visibility="package"/>
+        <Field name="itlx" type="int" visibility="package"/>
+        <Field name="itly" type="int" visibility="package"/>
+        <Field name="pointList" type="List&lt;Point&gt;" visibility="package"/>
+        <Field name="speedList" type="List&lt;Float&gt;" visibility="package"/>
+        <Field name="dragstartpoint" type="Point" visibility="package"/>
+        <Field name="scale" type="double" visibility="package"/>
+        <Field name="zoomfactor" type="double" visibility="package"/>
+        <Field name="xoffset" type="int" visibility="package"/>
+        <Field name="yoffset" type="int" visibility="package"/>
+        <Field name="xorigin" type="int" visibility="package"/>
+        <Field name="yorigin" type="int" visibility="package"/>
+        <Field name="xscale" type="double" visibility="package"/>
+        <Field name="yscale" type="double" visibility="package"/>
+        <Field name="calibrating" type="boolean" visibility="package"/>
+        <Field name="defaultcalibration" type="boolean" visibility="package"/>
+        <Field name="calibrationpointlist" type="List&lt;Point&gt;" visibility="package"/>
+        <Field name="calibrationdialog" type="JDialog" visibility="package"/>
+        <Field name="speed" type="int" visibility="package"/>
+        <Field name="nbNodePerGroup" type="int" visibility="package"/>
+        <Field name="nbNodeperLine" type="int" visibility="package"/>
+        <Field name="stepDuration" type="int" visibility="package"/>
+        <Field name="marinasDistance" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getPreferredSize" returnType="Dimension" visibility="public"/>
+        <Method name="mousePressed" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="addpoint" returnType="void" visibility="private">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="removepoint" returnType="void" visibility="private">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="movepoint" returnType="void" visibility="private">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="tox"/>
+          <Argument type="int" name="toy"/>
+        </Method>
+        <Method name="clearpoints" returnType="void" visibility="private"/>
+        <Method name="drawpoint" returnType="void" visibility="private">
+          <Argument type="Graphics2D" name="g"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="drawline" returnType="void" visibility="private">
+          <Argument type="Graphics2D" name="g"/>
+          <Argument type="Point" name="p1"/>
+          <Argument type="Point" name="p2"/>
+        </Method>
+        <Method name="movepoint" returnType="void" visibility="private">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="moveimage" returnType="void" visibility="private">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="zoom" returnType="void" visibility="private">
+          <Argument type="int" name="direction"/>
+        </Method>
+        <Method name="mouseDragged" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseReleased" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseMoved" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseClicked" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseExited" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseEntered" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseWheelMoved" returnType="void" visibility="public">
+          <Argument type="MouseWheelEvent" name="e"/>
+        </Method>
+        <Method name="paintComponent" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="screen2transformed" returnType="Point" visibility="private">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="screen2real" returnType="Point" visibility="private">
+          <Argument type="Point" name="p"/>
+        </Method>
+        <Method name="printpoints" returnType="List&lt;Point&gt;" visibility="private"/>
+        <Method name="writewaypoints" returnType="void" visibility="private"/>
+        <Method name="writewaypoints" returnType="void" visibility="private">
+          <Argument type="PrintStream" name="ps"/>
+        </Method>
+        <Method name="writemarinatrajectories" returnType="void" visibility="private"/>
+        <Method name="writesourcetrajectories" returnType="void" visibility="private"/>
+        <Method name="writetrajectories" returnType="void" visibility="private">
+          <Argument type="PrintStream" name="ps"/>
+          <Argument type="List&lt;Map&lt;Integer, Node&gt;&gt;" name="lmin"/>
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="printmarinatrajectories" returnType="void" visibility="private"/>
+        <Method name="getps" returnType="PrintStream" visibility="private">
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="index"/>
+          <Argument type="File" name="directory"/>
+        </Method>
+        <Method name="calibrate" returnType="void" visibility="private"/>
+        <Method name="setcalibrationpoint" returnType="void" visibility="private">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="finishcalibrating" returnType="void" visibility="private"/>
+        <Method name="setcalibrationpoints" returnType="void" visibility="package">
+          <Argument type="int" name="tlx"/>
+          <Argument type="int" name="tly"/>
+          <Argument type="int" name="brx"/>
+          <Argument type="int" name="bry"/>
+        </Method>
+        <Method name="setdefaultcalibration" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="firstPoints" source="arieleditingpanel.MarinasPositionsCalculator" target="arieleditingpanel.Node" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Map&lt;Integer, Node&gt;"/>
+    <UseRelation source="arieleditingpanel.MarinasPositionsCalculator" target="arieleditingpanel.Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="arieleditingpanel.WayPointEditingPanel" target="arieleditingpanel.Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="wpep" source="arieleditingpanel.CalibrateForm" target="arieleditingpanel.WayPointEditingPanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="marinasPoints" source="arieleditingpanel.MarinasPositionsCalculator" target="arieleditingpanel.Node" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Map&lt;Integer, Node&gt;&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

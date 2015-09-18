@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="com.cgg.arielgeometryjfcviewer">
+  <ClassDiagramComponents>
+    <Class name="ArielGeometryJFCViewerTopComponent" package="com.cgg.arielgeometryjfcviewer" visibility="public" isFinal="true" xPosition="625.0" yPosition="229.0">
+      <Fields>
+        <Field name="agm" type="AbstractGeometryModel" visibility="private"/>
+        <Field name="content" type="InstanceContent" visibility="private"/>
+        <Field name="result" type="org.openide.util.Lookup.Result&lt;AbstractGeometryModel&gt;" visibility="private"/>
+        <Field name="chartpanel" type="ArielGeometryJFCXYPlot" visibility="private"/>
+        <Field name="debug" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="void" visibility="private"/>
+        <Method name="componentOpened" returnType="void" visibility="public"/>
+        <Method name="componentClosed" returnType="void" visibility="public"/>
+        <Method name="componentShowing" returnType="void" visibility="protected"/>
+        <Method name="componentHidden" returnType="void" visibility="protected"/>
+        <Method name="componentActivated" returnType="void" visibility="protected"/>
+        <Method name="componentDeactivated" returnType="void" visibility="protected"/>
+        <Method name="writeProperties" returnType="void" visibility="package">
+          <Argument type="java.util.Properties" name="p"/>
+        </Method>
+        <Method name="readProperties" returnType="void" visibility="package">
+          <Argument type="java.util.Properties" name="p"/>
+        </Method>
+        <Method name="resultChanged" returnType="void" visibility="public">
+          <Argument type="LookupEvent" name="le"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ArielGeometryJFCXYPlot" package="com.cgg.arielgeometryjfcviewer" visibility="public" xPosition="436.0" yPosition="838.0">
+      <Fields>
+        <Field name="content" type="InstanceContent" visibility="private"/>
+        <Field name="chartPanels" type="ChartPanel[]" visibility="package"/>
+        <Field name="agm" type="AbstractGeometryModel" visibility="package"/>
+        <Field name="xmax" type="double" visibility="package"/>
+        <Field name="ymax" type="double" visibility="package"/>
+        <Field name="xmin" type="double" visibility="package"/>
+        <Field name="ymin" type="double" visibility="package"/>
+        <Field name="maxoffset" type="float" visibility="package"/>
+        <Field name="debug" type="boolean" visibility="private" isStatic="true"/>
+        <Field name="maxrecvr" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="title"/>
+          <Argument type="InstanceContent" name="content"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="drawmap" returnType="void" visibility="public">
+          <Argument type="AbstractGeometryModel" name="agm"/>
+        </Method>
+        <Method name="plotsources" returnType="void" visibility="package"/>
+        <Method name="plotreceivers" returnType="void" visibility="package"/>
+        <Method name="plotbincoverage" returnType="void" visibility="package"/>
+        <Method name="displayPlot" returnType="ChartPanel" visibility="public">
+          <Argument type="double" name="data"/>
+          <Argument type="String" name="pname"/>
+          <Argument type="String" name="sname"/>
+          <Argument type="float" name="max"/>
+          <Argument type="boolean" name="showscale"/>
+          <Argument type="int" name="i"/>
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="y"/>
+          <Argument type="String" name="scaletext"/>
+        </Method>
+        <Method name="createXYZDataset" returnType="DefaultXYZDataset" visibility="private">
+          <Argument type="double" name="data"/>
+        </Method>
+        <Method name="printDataset" returnType="void" visibility="private" isStatic="true">
+          <Argument type="DefaultXYZDataset" name="dataset"/>
+        </Method>
+        <Method name="createChart" returnType="JFreeChart" visibility="private">
+          <Argument type="XYDataset" name="dataset"/>
+          <Argument type="String" name="pname"/>
+          <Argument type="float" name="max"/>
+          <Argument type="boolean" name="showscale"/>
+          <Argument type="float" name="xblksize"/>
+          <Argument type="float" name="yblksize"/>
+          <Argument type="String" name="scaletext"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="EditingPanel" package="com.cgg.arielgeometryjfcviewer" visibility="public" xPosition="1279.0" yPosition="769.0">
+      <Fields>
+        <Field name="background" type="BufferedImage" visibility="package"/>
+        <Field name="firstTime" type="boolean" visibility="package"/>
+        <Field name="itlx" type="int" visibility="package"/>
+        <Field name="itly" type="int" visibility="package"/>
+        <Field name="pointList" type="List&lt;Point&gt;" visibility="package"/>
+        <Field name="dragstartpoint" type="Point" visibility="package"/>
+        <Field name="scale" type="double" visibility="package"/>
+        <Field name="zoomfactor" type="double" visibility="package"/>
+        <Field name="maptoplx" type="int" visibility="package"/>
+        <Field name="maptoply" type="int" visibility="package"/>
+        <Field name="mapwidth" type="int" visibility="package"/>
+        <Field name="mapheight" type="int" visibility="package"/>
+        <Field name="imgwidth" type="int" visibility="package"/>
+        <Field name="imgheight" type="int" visibility="package"/>
+        <Field name="xscale" type="double" visibility="package"/>
+        <Field name="yscale" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getPreferredSize" returnType="Dimension" visibility="public"/>
+        <Method name="mousePressed" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="addpoint" returnType="void" visibility="private">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="removepoint" returnType="void" visibility="private">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="movepoint" returnType="void" visibility="private">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="tox"/>
+          <Argument type="int" name="toy"/>
+        </Method>
+        <Method name="clearpoints" returnType="void" visibility="private"/>
+        <Method name="drawpoint" returnType="void" visibility="private">
+          <Argument type="Graphics2D" name="g"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="drawline" returnType="void" visibility="private">
+          <Argument type="Graphics2D" name="g"/>
+          <Argument type="Point" name="p1"/>
+          <Argument type="Point" name="p2"/>
+        </Method>
+        <Method name="movepoint" returnType="void" visibility="private">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="moveimage" returnType="void" visibility="private">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="zoom" returnType="void" visibility="private">
+          <Argument type="int" name="direction"/>
+        </Method>
+        <Method name="scale" returnType="double" visibility="private">
+          <Argument type="float" name="v"/>
+        </Method>
+        <Method name="mouseDragged" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseReleased" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseMoved" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseClicked" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseExited" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseEntered" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="paintComponent" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="mouseWheelMoved" returnType="void" visibility="public">
+          <Argument type="MouseWheelEvent" name="e"/>
+        </Method>
+        <Method name="screen2real" returnType="Point" visibility="private">
+          <Argument type="Point" name="p"/>
+        </Method>
+        <Method name="real2screen" returnType="Point" visibility="private">
+          <Argument type="Point" name="p"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InterpolatedPaintScale" package="com.cgg.arielgeometryjfcviewer" visibility="public" xPosition="1279.0" yPosition="241.0">
+      <Fields>
+        <Field name="max" type="float" visibility="private"/>
+        <Field name="lower" type="float" visibility="private"/>
+        <Field name="upper" type="float" visibility="private"/>
+        <Field name="debug" type="boolean" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="float" name="max"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="float" name="max"/>
+          <Argument type="float" name="lower"/>
+          <Argument type="float" name="upper"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getLowerBound" returnType="double" visibility="public"/>
+        <Method name="getUpperBound" returnType="double" visibility="public"/>
+        <Method name="getPaint" returnType="Paint" visibility="public">
+          <Argument type="double" name="d"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="chartpanel" source="com.cgg.arielgeometryjfcviewer.ArielGeometryJFCViewerTopComponent" target="com.cgg.arielgeometryjfcviewer.ArielGeometryJFCXYPlot" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
