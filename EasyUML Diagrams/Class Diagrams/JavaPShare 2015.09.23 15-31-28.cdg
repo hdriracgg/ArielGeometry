@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="JavaPShare">
+  <ClassDiagramComponents>
+    <Class name="FileUtils" package="com.enova.common.utils" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="directory" type="String" visibility="private"/>
+        <Field name="category" type="String" visibility="private"/>
+        <Field name="ROOTPATH" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="instance" type="FileUtils" visibility="public" isStatic="true"/>
+        <Field name="properties" type="Properties" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="visitAllDirs" returnType="void" visibility="public">
+          <Argument type="File" name="dir"/>
+        </Method>
+        <Method name="getInstance" returnType="FileUtils" visibility="public" isStatic="true"/>
+        <Method name="doUpload" returnType="boolean" visibility="public">
+          <Argument type="byte[]" name="bytes"/>
+          <Argument type="String" name="fileName"/>
+        </Method>
+        <Method name="getDownloadList" returnType="List" visibility="public"/>
+        <Method name="Download" returnType="byte[]" visibility="public">
+          <Argument type="String" name="fileName"/>
+        </Method>
+        <Method name="doDownload" returnType="byte[]" visibility="public">
+          <Argument type="String" name="fileName"/>
+        </Method>
+        <Method name="doDownloadLogFile" returnType="byte[]" visibility="public">
+          <Argument type="String" name="path"/>
+        </Method>
+        <Method name="viderLogFile" returnType="void" visibility="public">
+          <Argument type="String" name="path"/>
+        </Method>
+        <Method name="readLogFile" returnType="String" visibility="public">
+          <Argument type="String" name="path"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RessourceManager" package="com.enova.common.utils" visibility="public" xPosition="20.0" yPosition="476.0">
+      <Fields>
+        <Field name="instance" type="RessourceManager" visibility="private" isStatic="true"/>
+        <Field name="PARAM_RESOURCES" type="String" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getInstance" returnType="RessourceManager" visibility="public" isStatic="true"/>
+        <Method name="getRessource" returnType="String" visibility="public">
+          <Argument type="String" name="key"/>
+        </Method>
+        <Method name="getParametre" returnType="String" visibility="public">
+          <Argument type="String" name="key"/>
+        </Method>
+        <Method name="getProperties" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="key"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Utils" package="com.enova.common.utils" visibility="public" isAbstract="true" xPosition="430.0" yPosition="20.0">
+      <Fields>
+        <Field name="MOOS_BYTE_ORDER" type="ByteOrder" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getInt" returnType="int" visibility="public" isStatic="true">
+          <Argument type="ByteBuffer" name="byteBuffer"/>
+        </Method>
+        <Method name="getDouble" returnType="double" visibility="public" isStatic="true">
+          <Argument type="ByteBuffer" name="byteBuffer"/>
+        </Method>
+        <Method name="getChar" returnType="char" visibility="public" isStatic="true">
+          <Argument type="ByteBuffer" name="byteBuffer"/>
+        </Method>
+        <Method name="getString" returnType="String" visibility="public" isStatic="true">
+          <Argument type="ByteBuffer" name="msgBuffer"/>
+        </Method>
+        <Method name="putString" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ByteBuffer" name="msgBuffer"/>
+          <Argument type="String" name="s"/>
+        </Method>
+        <Method name="putInt" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ByteBuffer" name="msgBuffer"/>
+          <Argument type="Integer" name="number"/>
+        </Method>
+        <Method name="putDouble" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ByteBuffer" name="msgBuffer"/>
+          <Argument type="Double" name="value"/>
+        </Method>
+        <Method name="moosTimeNow" returnType="double" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="MOOSListener" package="com.enova.moos" visibility="public" xPosition="430.0" yPosition="476.0">
+      <Fields>
+        <Field name="taille" type="int" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="buffer" type="byte" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="argv"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MOOSMsg" package="com.enova.moos" visibility="public" xPosition="917.0" yPosition="20.0">
+      <Fields>
+        <Field name="msgID" type="int" visibility="private"/>
+        <Field name="msgType" type="char" visibility="private"/>
+        <Field name="dataType" type="char" visibility="private"/>
+        <Field name="varName" type="String" visibility="private"/>
+        <Field name="time" type="double" visibility="private"/>
+        <Field name="doubleData" type="double" visibility="private"/>
+        <Field name="m_dfVal2" type="double" visibility="private"/>
+        <Field name="stringData" type="String" visibility="private"/>
+        <Field name="source" type="String" visibility="private"/>
+        <Field name="sourceAuxInfo" type="String" visibility="private"/>
+        <Field name="community" type="String" visibility="private"/>
+        <Field name="msgLength" type="int" visibility="private"/>
+        <Field name="msgOutID" type="Long" visibility="private"/>
+        <Field name="INT_SIZE_IN_BYTES" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="BYTE_SIZE_IN_BYTES" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="DOUBLE_SIZE_IN_BYTES" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MOOS_DOUBLE" type="char" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="MOOS_STRING" type="char" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="DISABLE_AUX_SOURCE" type="boolean" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getMsgType" returnType="char" visibility="public"/>
+        <Method name="setMsgType" returnType="void" visibility="public">
+          <Argument type="char" name="msgType"/>
+        </Method>
+        <Method name="getDataType" returnType="char" visibility="public"/>
+        <Method name="setDataType" returnType="void" visibility="public">
+          <Argument type="char" name="dataType"/>
+        </Method>
+        <Method name="getVarName" returnType="String" visibility="public"/>
+        <Method name="setVarName" returnType="void" visibility="public">
+          <Argument type="String" name="varName"/>
+        </Method>
+        <Method name="getMsgID" returnType="int" visibility="public"/>
+        <Method name="setMsgID" returnType="void" visibility="public">
+          <Argument type="int" name="msgID"/>
+        </Method>
+        <Method name="getTime" returnType="double" visibility="public"/>
+        <Method name="setTime" returnType="void" visibility="public">
+          <Argument type="double" name="time"/>
+        </Method>
+        <Method name="getDoubleData" returnType="double" visibility="public"/>
+        <Method name="setDoubleData" returnType="void" visibility="public">
+          <Argument type="double" name="doubleData"/>
+        </Method>
+        <Method name="getM_dfVal2" returnType="double" visibility="public"/>
+        <Method name="setM_dfVal2" returnType="void" visibility="public">
+          <Argument type="double" name="m_dfVal2"/>
+        </Method>
+        <Method name="getStringData" returnType="String" visibility="public"/>
+        <Method name="setStringData" returnType="void" visibility="public">
+          <Argument type="String" name="stringData"/>
+        </Method>
+        <Method name="getSource" returnType="String" visibility="public"/>
+        <Method name="setSource" returnType="void" visibility="public">
+          <Argument type="String" name="source"/>
+        </Method>
+        <Method name="getSourceAuxInfo" returnType="String" visibility="public"/>
+        <Method name="setSourceAuxInfo" returnType="void" visibility="public">
+          <Argument type="String" name="sourceAuxInfo"/>
+        </Method>
+        <Method name="getCommunity" returnType="String" visibility="public"/>
+        <Method name="setCommunity" returnType="void" visibility="public">
+          <Argument type="String" name="community"/>
+        </Method>
+        <Method name="getMsgLength" returnType="int" visibility="public"/>
+        <Method name="setMsgLength" returnType="void" visibility="public">
+          <Argument type="int" name="msgLength"/>
+        </Method>
+        <Method name="getMsgOutID" returnType="Long" visibility="public"/>
+        <Method name="setMsgOutID" returnType="void" visibility="public">
+          <Argument type="Long" name="msgOutID"/>
+        </Method>
+        <Method name="moosTrace" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="s"/>
+        </Method>
+        <Method name="getSizeInBytesWhenSerialised" returnType="int" visibility="public"/>
+        <Method name="serialize" returnType="ByteBuffer" visibility="public"/>
+        <Method name="deSerialize" returnType="void" visibility="public">
+          <Argument type="ByteBuffer" name="msgBuffer"/>
+        </Method>
+        <Method name="moosTrace" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="s"/>
+          <Argument type="Object" name="variables"/>
+        </Method>
+        <Method name="trace" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="instance" source="com.enova.common.utils.RessourceManager" target="com.enova.common.utils.RessourceManager" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.enova.common.utils.FileUtils" target="com.enova.common.utils.Utils" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.enova.common.utils.RessourceManager" target="com.enova.common.utils.RessourceManager" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instance" source="com.enova.common.utils.FileUtils" target="com.enova.common.utils.FileUtils" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="com.enova.moos.MOOSListener" target="com.enova.moos.MOOSMsg"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
